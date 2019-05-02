@@ -1,0 +1,31 @@
+\documentclass{standalone}
+\usepackage{picture,color}
+\usepackage{graphicx}
+\graphicspath{{./scan_1_raw/}}
+\setlength{\unitlength}{1in}
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
+
+\begin{document}
+\begin{picture}(7.75, 4.65)(.15, -4.63)
+
+\put(0.15, -4.65){\includegraphics[width=7.75in, height=4.5in]{./spatial_overlap_with_confidence.pdf}}
+\put(0.19, -.825){\rotatebox{90}{\large 1-10}}
+\put(0.19, -1.78){\rotatebox{90}{\large 11-30}}
+\put(0.19, -2.65){\rotatebox{90}{\large 31-60}}
+\put(0.19, -3.56){\rotatebox{90}{\large 61-100}}
+\put(0.19, -4.52){\rotatebox{90}{\large 101-173}}
+
+\put(7.74, -.9){\rotatebox{90}{\large $>2.91$}}
+\put(7.74, -1.7875){\rotatebox{90}{\large $>2.15$}}
+\put(7.74, -2.675){\rotatebox{90}{\large $>1.57$}}
+\put(7.74, -3.5625){\rotatebox{90}{\large $>1.23$}}
+\put(7.74, -4.42){\rotatebox{90}{\large other}}
+
+\put(1.25, -.16){\Large slice 1}
+\put(3.72, -.16){\Large slice 2}
+\put(6.17, -.16){\Large slice 3}
+
+
+\end{picture}
+\end{document}\grid

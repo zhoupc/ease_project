@@ -1,0 +1,25 @@
+
+\documentclass{standalone}
+\usepackage{picture,color}
+\usepackage{graphicx}
+\graphicspath{{./scan_1_raw/}}
+\setlength{\unitlength}{1in}
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arial
+
+\begin{document}
+\begin{picture}(7.5, 2.43)(0.,-2.43)
+
+\put(4.3, -2.6){\includegraphics[height=2.7in]{example_merge_meshes.pdf}}
+\put(4.5, -0.2){\large\textbf{C}}
+
+\put(0.2, -0.85){\includegraphics[height=0.685in]{example_merge.pdf}}
+\put(0.7, -0.13){{slice 1}}
+\put(2.1, -0.13){{slice 2}}
+\put(3.5, -0.13){{slice 3}}
+\put(0.01, -0.2){\large\textbf{A}}
+\put(0.2, -2.4){\includegraphics[height=1.433in]{example_merge_temporal.pdf}}
+\put(0.01, -1.01){\large\textbf{B}}
+
+\end{picture}
+\end{document}\grid

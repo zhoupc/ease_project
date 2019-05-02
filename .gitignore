@@ -1,0 +1,16 @@
+pinky100_config.yaml 
+
+*.avi 
+*.mat
+*.log
+*.aux 
+*.fls
+*.gz
+*.fdb_latexmk
+*.bbl 
+*.blg
+*.out
+*.soc
+*.synctex.gz
+
+.cache
