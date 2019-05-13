@@ -5,7 +5,7 @@ ease.use_denoise =false;
 save_image = true;
 run_analysis_again = false;
 ease.create_new = false;
-output_figs = fullfile(ease.fig_folder, sprintf('compare_cnmf_scan_%d', ease.scan_id));
+output_figs = fullfile(ease.fig_folder, sprintf('compare_cnmf_scan_%d_new', ease.scan_id));
 if ~exist(output_figs, 'dir')
     mkdir(output_figs);
 end
@@ -62,16 +62,15 @@ if ~exist('cnmf_results.mat', 'file')
     neuron_cnmf = neuron.copy();
     
     % fetch results from Ding 
-    load cnmf_scan1_results_from_ding.mat;
+    rlt = matfile('rlt_update.mat');
     temp = neuron.reshape(neuron.spatial_range, 3);
-    rlt = rlt{1}.fin_rlt;
     tmp_ind = neuron.reshape(neuron.spatial_range, 3);
     tmp_ind(13:52, 1:128, plane_id) = true;
     d = numel(tmp_ind); 
     K_cnmf = size(rlt.a, 2);
     neuron_cnmf.A = zeros(d, K_cnmf);
     neuron_cnmf.A(tmp_ind, :) = rlt.a;
-    neuron_cnmf.C = rlt.c_tf';
+    neuron_cnmf.C = rlt.c';
     neuron_cnmf.C_raw = rlt.c';
     neuron_cnmf.b = zeros(d, size(rlt.fb,2));
     neuron_cnmf.b(tmp_ind,:) = rlt.fb;

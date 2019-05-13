@@ -1,5 +1,6 @@
-datasets_list: ['pinky100', 'pinky40', 'test']
-databases_list: ['ninai.cluster-chjk7zcxhsgn.us-east-1.rds.amazonaws.com:3306', '127.0.0.1:3306']
-pinky40: {datajoint_name: ta3, rel_mesh: ta3.MeshFragment, em_scale_factor: 8.950000000000001E-4}
-pinky100: {datajoint_name: ta3p100, rel_mesh: ta3p100.Mesh}
-test: {datajoint_name: ta3test, rel_mesh: 'ta3test.Mesh '}
+datasets_list: [pinky100, pinky40, pinky]
+databases_list: ['127.0.0.1:3306', 'ninai.cluster-chjk7zcxhsgn.us-east-1.rds.amazonaws.com:3306']
+pinky40: {datajoint_name: ta3, database_name: microns_ta3, rel_mesh: ta3.MeshFragment,
+  em_scale_factor: 8.950000000000001E-4}
+pinky100: {datajoint_name: ta3p100, database_name: microns_ta3p100, rel_mesh: ta3p100.Mesh}
+pinky: {datajoint_name: ta3p, database_name: microns_pinky, rel_mesh: ta3p.Mesh}

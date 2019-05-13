@@ -49,7 +49,7 @@ end
 %     [70018614,   55282126,   58281524], ...
 %     [89057384, 77796334]}; 
 known_em_pairs = [70018614,   55282126,   58281524];
-npair = length(known_2p_pairs);
+npair = length(known_em_pairs);
 known_2p_pairs = 0*known_em_pairs;
 
 em_ids = cell2mat(neuron.match_status.em_ids);
@@ -104,12 +104,12 @@ crop_c = round(mean(crange)) + (-50:30) + FOV(3);
 
 
 % fuse them
-img_bg = neuron_large.reshape(corr_Yc/max(corr_Yc(:)), 3); 
+img_bg = reshape(corr_Yc/max(corr_Yc(:)), [ease.dims_video, 3]); 
 img = cell(3, 1);
 for m=1:3 % slice by slice 
     % add neurons spatial footprints to the background
     temp = repmat(img_bg(:, :, m), [1, 1, 3]);
-    temp = uint8(temp*255);
+    temp = uint8(temp*500);
     
     % fuse
     for n=1:length(known_2p_pairs) % cell by cell 
@@ -120,7 +120,7 @@ for m=1:3 % slice by slice
 end
 
 pixel_size = ease.range_2p(1) / ease.dims_video(1); 
-neuron_large.showImage(img, 'horizontal', [], pixel_size, 'k'); 
+neuron.showImage(img, 'horizontal', [], pixel_size, 'k'); 
 tmp_axes = get(gcf, 'children'); 
 em_ranges = ease.em_ranges(ease.video_zvals_updated(ease.scan_id,:)); 
 for m=1:length(tmp_axes)

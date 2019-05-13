@@ -26,7 +26,7 @@ C = results.C(:, :, example_idx);
 S = results.S(:, :, example_idx); 
 TC = results.y(:, :, example_idx); 
 V_2p = reshape(full(results.A(:, example_idx)), d1, d2, []); 
-V_em = reshape(full(results.A(:, example_idx)), d1, d2, []); 
+V_em = reshape(full(results.A_em(:, example_idx)), d1, d2, []); 
 V_2p(V_2p==0) = nan; 
 V_em(V_em==0) = nan; 
 V_2p = reshape(V_2p, d1, d2, []);
@@ -107,7 +107,7 @@ fig_x0 = 510;
 fig_y0 = 400;
 init_fig;
 for m=1:(scan_to_show*d3)
-    surf(xx, yy, ones(size(xx))*zvals(m)*z_zoomin, 4*(V_em(:, :, m)),...
+    surf(xx, yy, ones(size(xx))*zvals(m)*z_zoomin, 2*(V_em(:, :, m)),...
         'edgecolor', [1,1,1]*0.9, 'edgealpha', 0.5);
     alpha(1);
     hold on;
@@ -156,7 +156,7 @@ set(gca, 'ytick', (floor(yrange(1)/20):ceil(yrange(2)/20))*20);
 set(gca, 'ztick', (60:20:180)*z_zoomin);
 set(gca, 'zticklabel', '');
 view(view_angle);
-caxis([0, max(V_em(:))]);
+caxis([0, max(V_2p(:))]);
 
 temp = colormap('hot');
 colormap(flipud(temp)); 
