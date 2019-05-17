@@ -1,5 +1,7 @@
 # EASE project 
 
+![](Figures/pinky40/graph_abstract.png)
+
 This project includes all my work relating to the development of **EASE: EM-Assisted Sources Extraction** for calcium imaging data. This project was originally started for the support of analyzing data collected for [MICrONs](https://www.iarpa.gov/index.php/research-programs/microns) project. 
 
 The goal here is to automatically extract neurons and their activity from calcium imaging data, and simutaneously match them with the segmented **electron microscopy (EM)** components. 
