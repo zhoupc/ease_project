@@ -36,11 +36,11 @@ to be added.
 >> fi.usepkg('ease')
 >> run_ease; 
 
-%% Figure 1 
->> run scripts/pinky40/em_features/main.m 
+%% Figure 1: graph abstract
+>> run scripts/pinky40/graph_abstract/main.m 
 
-%% Figure 2 
->> run scripts/pinky40/initialization/main.m 
+%% Figure 2: EM features 
+>> run scripts/pinky40/em_features/main.m 
 
 %% Figure 3-6; Video S1; Video S2 
 >> run scripts/pinky40/one_scan/main.m  % EASE will open a GUI automatically for you do do some manual intervention. it's mainly about verifying good matches, labeling components as soma or dendrite, find false positives 
@@ -52,6 +52,9 @@ to be added.
 
 %% Figure 8 
 >> run scripts/pinky40/compare_cnmf/main.m 
+
+%% Figure 9: initialization 
+>> run scripts/pinky40/initialization/main.m 
 ```
 
 ### step 4: compile tex files to create figures for the paper. 
@@ -60,11 +63,11 @@ The above matlab commands creates all subfigures for the paper. We need to combi
 # change the current folder
 cd Figures/pinky40/
 
-# Figure 1 
-pdflatex fig_example_pi.tex 
+# Figure 1
+you need to use powerpoint to create this figure. see Figures/pinky40/graph_abstract.pptx.
 
 # Figure 2 
-pdflatex fig_initialization.tex
+pdflatex fig_example_pi.tex 
 
 # Figure 3 
 pdflatex fig_example_one_scan_a.tex
@@ -86,6 +89,8 @@ pdflatex fig_multi_scan.tex
 # Figure 8 
 pdflatex cnmf_ease_match.tex 
 
+# Figure 9
+pdflatex fig_initialization.tex
 
 # return to the home folder 
 cd ../../
@@ -94,10 +99,11 @@ cd ../../
 We can physically copy the compiled files in step 4 to the folder manuscript/Figs/, or we can simply create a link in the target folder. We prefer the second option because we don't have to redo this copying step when we update the figure in step 4. Run the following scripts in terminal
 ```bash 
 # Figure 1 
-ln -P Figures/pinky40/fig_example_pi.pdf manuscript/Figs/fig_example_pi.pdf # -P should be deleted on Mac OSX
+ln -P Figures/pinky40/graph_abstract.pdf manuscript/Figs/graph_abstract.pdf 
+
 
 # Figure 2 
-ln -P Figures/pinky40/fig_initialization.pdf manuscript/Figs/fig_initialization.pdf 
+ln -P Figures/pinky40/fig_example_pi.pdf manuscript/Figs/fig_example_pi.pdf # -P should be deleted on Mac OSX
 
 # Figure 3 
 ln -P Figures/pinky40/fig_example_one_scan.pdf manuscript/Figs/fig_example_scan_1.pdf 
@@ -116,6 +122,10 @@ ln -P Figures/pinky40/fig_multi_scan.pdf manuscript/Figs/fig_multi_scan.pdf
 
 # Figure 8 
 ln -P Figures/pinky40/cnmf_ease_match.pdf manuscript/Figs/cnmf_ease_match.pdf 
+
+# Figure 9 
+ln -P Figures/pinky40/fig_initialization.pdf manuscript/Figs/fig_initialization.pdf 
+
 
 ```
 
